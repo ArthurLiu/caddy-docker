@@ -3,7 +3,7 @@
 #
 FROM abiosoft/caddy:builder as builder
 
-ARG version="0.11.4"
+ARG version="0.11.5"
 ARG plugins="git,filebrowser,cors,realip,expires,cache,dyn,filter,forwardproxy,googlecloud,grpc,ipfilter,jwt,login,proxyprotocol,reauth,upload,webdav"
 
 # process wrapper
@@ -17,7 +17,7 @@ RUN VERSION=${version} PLUGINS=${plugins} /bin/sh /usr/bin/builder.sh
 FROM alpine:3.8
 LABEL maintainer "Obey Arthur Liu <arthur@milliways.fr>"
 
-ARG version="0.11.4"
+ARG version="0.11.5"
 LABEL caddy_version="$version"
 
 # Let's Encrypt Agreement
